@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <RootNamespace>SceneEffectsPresetsWindowMemory</RootNamespace>
+    <AssemblyName>SceneEffectsPresetsWindowMemory</AssemblyName>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <DebugType>embedded</DebugType>
+    <Deterministic>true</Deterministic>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <!-- Koikatsu Sunshine install folder. Override with /p:KKSPath=... or env KKS_PATH. -->
+    <KKSPath Condition="'$(KKSPath)' == ''">$(KKS_PATH)</KKSPath>
+    <KKSPath Condition="'$(KKSPath)' == ''">C:\illusion\kks</KKSPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IllusionLibs.BepInEx" Version="5.*" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.AllPackages" Version="*" />
+  </ItemGroup>
+
+  <Target Name="SkipAllRefs" AfterTargets="ResolveReferences">
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)" />
+    </ItemGroup>
+  </Target>
+</Project>
