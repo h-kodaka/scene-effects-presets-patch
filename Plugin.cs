@@ -3,7 +3,7 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 
-namespace SceneEffectsPresetsWindowMemory
+namespace SceneEffectsPresetsPatch
 {
     [BepInPlugin(GUID, PluginName, Version)]
     [BepInDependency(SceneEffectsPresetsReflection.OriginalPluginGuid, BepInDependency.DependencyFlags.SoftDependency)]
@@ -12,7 +12,7 @@ namespace SceneEffectsPresetsWindowMemory
     public class Plugin : BaseUnityPlugin
     {
         public const string GUID = "local.kks.sceneeffectspresets.windowmemory";
-        public const string PluginName = "SceneEffectsPresetsWindowMemory";
+        public const string PluginName = "SceneEffectsPresetsPatch";
         public const string Version = "1.0.0";
 
         internal static ManualLogSource Log;

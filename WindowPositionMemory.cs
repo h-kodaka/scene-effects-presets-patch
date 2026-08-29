@@ -1,7 +1,7 @@
 using BepInEx.Configuration;
 using UnityEngine;
 
-namespace SceneEffectsPresetsWindowMemory
+namespace SceneEffectsPresetsPatch
 {
     internal static class WindowPositionMemory
     {

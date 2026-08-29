@@ -2,8 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net46</TargetFramework>
     <LangVersion>8.0</LangVersion>
-    <RootNamespace>SceneEffectsPresetsWindowMemory</RootNamespace>
-    <AssemblyName>SceneEffectsPresetsWindowMemory</AssemblyName>
+    <RootNamespace>SceneEffectsPresetsPatch</RootNamespace>
+    <AssemblyName>SceneEffectsPresetsPatch</AssemblyName>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <DebugType>embedded</DebugType>

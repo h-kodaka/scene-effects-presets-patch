@@ -1,7 +1,7 @@
 using System.Reflection;
 using HarmonyLib;
 
-namespace SceneEffectsPresetsWindowMemory.Patches
+namespace SceneEffectsPresetsPatch.Patches
 {
     [HarmonyPatch]
     internal static class AwakePatch

@@ -1,7 +1,7 @@
 .PHONY: dll clean
 
 CONFIGURATION ?= Release
-PROJECT := SceneEffectsPresetsWindowMemory.csproj
+PROJECT := SceneEffectsPresetsPatch.csproj
 DOTNET_ARGS := -c $(CONFIGURATION)
 ifneq ($(KKS_PATH),)
 DOTNET_ARGS += /p:KKSPath="$(KKS_PATH)"

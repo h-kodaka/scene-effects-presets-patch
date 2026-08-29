@@ -1,4 +1,4 @@
-# SceneEffectsPresetsWindowMemory
+# SceneEffectsPresetsPatch
 
 Koikatsu Sunshine / CharaStudio 向けの BepInEx 5 プラグインです。  
 [Scene Effects Presets](https://github.com/ShalltyB/SceneEffectsPresets)（`KKS_SceneEffectsPresets.dll`）を改変せず、Harmony パッチでウィンドウ位置・サイズの記憶を追加します。
@@ -31,14 +31,14 @@ dotnet build -c Release
 ## Output
 
 ```text
-bin/Release/SceneEffectsPresetsWindowMemory.dll
+bin/Release/SceneEffectsPresetsPatch.dll
 ```
 
 ## Install
 
 ```text
 KKS_SceneEffectsPresets.dll
-SceneEffectsPresetsWindowMemory.dll
+SceneEffectsPresetsPatch.dll
 ↓
 Koikatsu Sunshine/BepInEx/plugins/
 ```
