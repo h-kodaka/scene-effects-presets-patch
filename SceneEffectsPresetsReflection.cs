@@ -54,11 +54,24 @@ namespace SceneEffectsPresetsPatch
             _awakeMethod = AccessTools.Method(_pluginType, "Awake");
             _onGuiMethod = AccessTools.Method(_pluginType, "OnGUI");
 
-            return _windowRectField != null
+            var resolved = _windowRectField != null
                 && _showMixPresetsField != null
                 && _toggleUiField != null
                 && _awakeMethod != null
                 && _onGuiMethod != null;
+
+            if (Plugin.Log != null)
+            {
+                Plugin.Log.LogInfo(
+                    "[WindowPos] Reflection: "
+                    + $"windowRect={_windowRectField != null}, "
+                    + $"showMixPresets={_showMixPresetsField != null}, "
+                    + $"toggleUI={_toggleUiField != null}, "
+                    + $"Awake={_awakeMethod != null}, "
+                    + $"OnGUI={_onGuiMethod != null}");
+            }
+
+            return resolved;
         }
 
         internal static Rect GetWindowRect()

@@ -86,6 +86,11 @@ namespace SceneEffectsPresetsPatch
 
             _harmony = Harmony.CreateAndPatchAll(typeof(Plugin).Assembly, GUID);
             Log.LogInfo("Scene Effects Presets detected. Window memory patch applied.");
+            Log.LogInfo(
+                $"[WindowPos] Config at startup: Enabled={Enabled.Value}, HasSavedPosition={HasSavedPosition.Value}, "
+                + $"x={WindowX.Value:0.##}, y={WindowY.Value:0.##}, w={WindowWidth.Value:0.##}, h={WindowHeight.Value:0.##}, "
+                + $"mix={ShowMixPresets.Value}");
+            WindowPositionMemory.LoadAndApply();
         }
 
         private void OnDestroy()

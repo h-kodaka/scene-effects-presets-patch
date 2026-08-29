@@ -18,6 +18,7 @@ namespace SceneEffectsPresetsPatch.Patches
 
         private static void Postfix()
         {
+            Plugin.Log.LogInfo("[WindowPos] AwakePatch Postfix invoked.");
             WindowPositionMemory.LoadAndApply();
         }
     }
