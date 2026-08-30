@@ -16,16 +16,8 @@ namespace SceneEffectsPresetsPatch.Patches
             return SceneEffectsPresetsReflection.OnGuiMethod;
         }
 
-        private static bool _loggedFirstOnGui;
-
         private static void Postfix()
         {
-            if (!_loggedFirstOnGui)
-            {
-                _loggedFirstOnGui = true;
-                Plugin.Log.LogInfo("[WindowPos] OnGuiPatch Postfix invoked (first frame).");
-            }
-
             WindowPositionMemory.TrySaveIfChanged();
         }
     }
