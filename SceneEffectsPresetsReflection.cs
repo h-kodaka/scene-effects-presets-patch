@@ -15,6 +15,7 @@ namespace SceneEffectsPresetsPatch
         private static FieldInfo _showMixPresetsField;
         private static MethodInfo _awakeMethod;
         private static MethodInfo _onGuiMethod;
+        private static MethodInfo _reloadFilesListMethod;
         private static FieldInfo _toggleUiField;
         private static bool _resolved;
 
@@ -53,12 +54,14 @@ namespace SceneEffectsPresetsPatch
             _toggleUiField = AccessTools.Field(_pluginType, "toggleUI");
             _awakeMethod = AccessTools.Method(_pluginType, "Awake");
             _onGuiMethod = AccessTools.Method(_pluginType, "OnGUI");
+            _reloadFilesListMethod = AccessTools.Method(_pluginType, "ReloadFilesList");
 
             return _windowRectField != null
                 && _showMixPresetsField != null
                 && _toggleUiField != null
                 && _awakeMethod != null
-                && _onGuiMethod != null;
+                && _onGuiMethod != null
+                && _reloadFilesListMethod != null;
         }
 
         internal static Rect GetWindowRect()
@@ -84,6 +87,16 @@ namespace SceneEffectsPresetsPatch
         internal static bool GetToggleUi()
         {
             return (bool)_toggleUiField.GetValue(null);
+        }
+
+        internal static void SetToggleUi(bool value)
+        {
+            _toggleUiField.SetValue(null, value);
+        }
+
+        internal static void ReloadFilesList()
+        {
+            _reloadFilesListMethod.Invoke(null, null);
         }
     }
 }

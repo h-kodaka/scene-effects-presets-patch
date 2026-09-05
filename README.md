@@ -5,9 +5,15 @@ Koikatsu Sunshine / CharaStudio 向けの BepInEx 5 プラグインです。
 
 ## 機能
 
+- Studio 左ツールバーに Scene Effects Presets 起動トグル（`SE PRE`）を追加
 - Scene Effects Presets UI ウィンドウの位置・サイズをセッション間で記憶
 - Mix Presets パネルの表示状態も保存（幅の倍率変更に対応）
 - 解像度変更時は画面内にクランプして復元
+
+## 開き方
+
+- Studio 左ツールバーの `SE PRE` ボタン（本パッチ追加）
+- 元 MOD ショートカット（既定: Left Alt + F）
 
 ## 前提
 

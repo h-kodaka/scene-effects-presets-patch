@@ -2,10 +2,12 @@ using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
+using KKAPI;
 
 namespace SceneEffectsPresetsPatch
 {
     [BepInPlugin(GUID, PluginName, Version)]
+    [BepInDependency(KoikatuAPI.GUID, KoikatuAPI.VersionConst)]
     [BepInDependency(SceneEffectsPresetsReflection.OriginalPluginGuid, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInProcess("CharaStudio")]
     [BepInProcess("CharaStudio.exe")]
@@ -13,7 +15,7 @@ namespace SceneEffectsPresetsPatch
     {
         public const string GUID = "local.kks.sceneeffectspresets.windowmemory";
         public const string PluginName = "SceneEffectsPresetsPatch";
-        public const string Version = "1.0.0";
+        public const string Version = "1.1.0";
 
         internal static ManualLogSource Log;
         internal static ConfigEntry<bool> Enabled;
@@ -87,6 +89,7 @@ namespace SceneEffectsPresetsPatch
             _harmony = Harmony.CreateAndPatchAll(typeof(Plugin).Assembly, GUID);
             Log.LogInfo("Scene Effects Presets detected. Window memory patch applied.");
             WindowPositionMemory.LoadAndApply();
+            StudioToolbar.Register(this);
         }
 
         private void OnDestroy()

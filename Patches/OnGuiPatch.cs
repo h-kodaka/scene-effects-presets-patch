@@ -18,6 +18,7 @@ namespace SceneEffectsPresetsPatch.Patches
 
         private static void Postfix()
         {
+            StudioToolbar.SyncFromUiState();
             WindowPositionMemory.TrySaveIfChanged();
         }
     }
